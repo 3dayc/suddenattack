@@ -1,0 +1,88 @@
+@charset "utf-8";
+
+/* base */
+html, div, span, h1, h2, h3, h4, h5, h6, p, a, em, img, button, input, dl, dt, dd, ul, ol, li, fieldset, form, label, legend, article, aside, canvas, details, embed, figure, figcaption, footer, top_wrap, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {margin:0; padding:0; border:0; font-size:1em; font:inherit; vertical-align:baseline;}
+body {width:100%; margin:0; padding:0; font-size:1em; line-height:normal; font-family:ymh,sans-serif; background:#fff; -webkit-text-size-adjust:none;}
+select, textarea {font-family:inherit; font-size:inherit; -webkit-appearance:none; -webkit-border-radius:0px;}
+ul, ol, li {list-style:none;}
+a {text-decoration:none;}
+img {vertical-align:top;}
+legend {position:absolute; left:0; top:-100px; width:0; height:0; font-size:0px; overflow:hidden;}
+button {border:none; background:none; vertical-align:middle;}
+input[type^='text' ],
+textarea {-webkit-border-radius:0px;}
+th,td{vertical-align:top;}
+.blind,legend,caption{width:0px; height:0px;position:absolute; overflow:hidden; font-size:0px; line-height:0px; z-index:-1;visibility:hidden;}
+iframe{margin:0;padding:0;vertical-align:top;border:0;}
+
+/* common */
+/*body{background:#1f2129 url('../images/bg.jpg') center top no-repeat;}*/ /* 151211 delete */
+#wrap{width:100%; background:#000 url('../images/bg.jpg') center top no-repeat;} /* 151211 modify */
+#wrap .floating_event{position:absolute; right:14px; top:42px; width:94px;}
+#wrap .floating_event a{display:block; width:94px;}
+#wrap .floating_event .btn1{}
+#wrap .floating_event .btn2{margin-top:26px;}
+#wrap .floating_event .btn3{margin-top:17px;}
+#content{width:100%; height:980px;}
+#content .wrap{position:relative; width:1140px; height:980px; margin:0 auto;}
+#content .wrap h1{padding-top:19px; padding-left:172px;}
+#content .wrap .big3{position:absolute; right:0; top:9px;}
+#content .wrap .big3 li{position:relative; width:604px; height:65px; margin-top:10px;}
+#content .wrap .big3 li a.tit{display:block; width:604px; height:65px;}
+#content .wrap .big3 li.bunker{background:url('../images/bunker.png') left top no-repeat;}
+#content .wrap .big3 li.bunker.on .play-video{display:block; margin-top:127px; margin-left:66px;}
+#content .wrap .big3 li.replay{background:url('../images/replay.png') left top no-repeat;}
+#content .wrap .big3 li.emblem{background:url('../images/emblem.png') left top no-repeat;}
+#content .wrap .big3 li.bunker.on{height:489px; background:url('../images/bunker_on.png') left top no-repeat;}
+#content .wrap .big3 li.replay.on{height:449px; background:url('../images/replay_on.png') left top no-repeat;}
+#content .wrap .big3 li.emblem.on{height:472px; background:url('../images/emblem_on.png') left top no-repeat;}
+#content .wrap .big3 li.on a.btn{display:block; position:absolute
+	; right:53px; top:150px; width:95px; height:25px; background:url('../images/transparent.png') left top repeat; z-index:111;}
+#content .wrap .big3 li.replay.on a.btn{position:absolute; right:53px; top:218px;}
+#content .wrap .big3 li.emblem.on a.btn2{display:block; position:absolute; left:168px; top:352px; width:271px; height:65px;}
+#content .wrap .big3 li .btn,
+#content .wrap .big3 li .btn2,
+#content .wrap .big3 li .play-video{display:none;}
+#content .wrap .banner{position:absolute; left:0; bottom:1px; width:1151px; height:224px; background:url('../images/banner.png') left top no-repeat;}
+#content .wrap .banner .cash{position:absolute; left:371px; top:157px; width:130px;}
+#content .wrap .banner .cash:after{content:''; display:block; clear:both; height:0; visibility:hidden;}
+#content .wrap .banner .cash span{float:left; display:block; width:20px; height:25px; margin-right:6px;}
+#content .wrap .banner a.btn{display:block; position:absolute; left:604px; top:145px; width:159px; height:45px; background:transparent;}
+#content .wrap .banner .day{position:absolute; left:918px; top:139px; width:137px;}
+#content .wrap .banner .day:after{content:''; display:block; clear:both; height:0; visibility:hidden;}
+#content .wrap .banner .day span{display:block; width:137px; height:59px;}
+#footer{width:100%; height:182px; background-color:#1f2129;}
+#footer .wrap{width:1280px; margin:0 auto; padding-top:60px; text-align:center;}
+#footer .wrap:after{content:''; display:block; clear:both; height:0; visibility:hidden;}
+#footer .wrap .copyright{display:inline-block;}
+#footer .wrap a{display:block; float:left;}
+#footer .wrap .sns{float:left; margin-right:160px;}
+#footer .wrap .sns:after{content:''; display:block; clear:both; height:0; visibility:hidden;}
+#footer .wrap .sns a{margin-right:6px; margin-left:3px;}
+#footer .wrap .btn_area{float:left;}
+#footer .wrap .btn_area:after{content:''; display:block; clear:both; height:0; visibility:hidden;}
+#footer .wrap .btn_area a{margin-right:50px;}
+#footer .wrap .not_today{float:right; margin-top:15px;}
+#footer .wrap .copyright{margin-top:33px;}
+
+/* popup */
+.pop{/*position:fixed;_position:absolute;*/position:absolute;top:0;left:0;width:100%;height:100%;display:none;z-index:11111;}
+.pop .bg{position:fixed;top:0;left:0;width:100%;height:100%;background:#000;opacity:.8;filter:alpha(opacity=80);} /* 151211 modify */
+.pop .popup_box{position:absolute;top:50%;left:50%;width:1099px;height:741px;margin:-374px 0 0 -567px;background:url('../images/popup.png') left top no-repeat;} /* 151211 modify */
+.pop .popup_box .btn_close{display:block; position:absolute; right:89px; top:39px; width:48px; height:47px; background:url('../images/close.png') left top no-repeat;}
+/*.pop .popup_box #areayoutube{margin-top:30px;}*/ /*151210 delete*/
+
+/* 151210 add */
+#tabs {width:618px; margin:274px 0 0 211px;} /* 151211 modify */
+#tabs ul {float: left;} 
+#tabs ul:after{content:''; display:block; clear:both; height:0; visibility:hidden;}
+#tabs li {width:309px; height:67px;}
+#tabs li, #tabs li a {float: left;} 
+#tabs ul li a {display:block; width:309px; height:67px;} 
+#tabs ul li.tab_menu1 a{background:url('../images/tab1.jpg') left top no-repeat;}
+#tabs ul li.tab_menu2 a{background:url('../images/tab2.jpg') left top no-repeat;}
+#tabs ul li.tab_menu1.active a {background:url('../images/tab1_active.jpg') left top no-repeat;}
+#tabs ul li.tab_menu2.active a {background:url('../images/tab2_active.jpg') left top no-repeat;}
+#tabs div {clear:both; width:612px; height:345px; padding:3px; background-color:#fff;}
+
+#content .wrap .banner a.btn2{display:block; position:absolute; right:106px; top:163px; width:122px; height:33px; background:transparent;}

@@ -1,0 +1,268 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="keywords" content="NEXON, 넥슨, NEXON Korea, 넥슨코리아, 서든어택, Sudden Attack" />
+    <title> SUDDEN ATTACK </title>
+    <link rel="stylesheet" type="text/css" href="css/common.css" />
+    <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+      <script src="http://www.youtube.com/player_api"></script>
+	<script type="text/javascript">
+	// youtube layer
+	/*151210 delete*/
+	/*
+    var movie_array=new Array();
+	movie_array[0]="1oW298iy0Tk" //151209 주소 수정
+	
+	function loadYoutube(arg){
+		var html_youtube;
+		html_youtube = "";
+		html_youtube = html_youtube + "<iframe width='920' height='520' src='https://www.youtube.com/embed/"+movie_array[arg]+"?rel=0?autoplay=1&autoplay=1&playlist="+movie_array[arg]+"&showinfo=0$hd=1' frameborder='0' allowfullscreen></iframe>";
+		
+		document.getElementById("areayoutube").innerHTML=html_youtube;
+		$('#layer_pop').show();
+	}
+
+	function closeMovie_Layer(){
+		$('#layer_pop').hide();
+		document.getElementById("areayoutube").innerHTML="";
+	}
+	*/
+	/*//151210 delete*/
+
+	/* 151210 add */
+	var urls = new Array ("http://www.youtube.com/embed/1oW298iy0Tk?autoplay=1&amp;vq=hd720",
+	"http://www.youtube.com/embed/1oW298iy0Tk?autoplay=1&amp;vq=hd720"); //151210_2 hd 추가
+	var currentTab = '';
+   
+   /* 151214 add */
+	var player;
+	function onYouTubePlayerAPIReady() {
+		player = new YT.Player('tab1', {
+		  height: '480',
+		  width: '855',
+		  videoId: 'HN3K3grJvqY',
+		  events: {
+			'onReady': onPlayerReady,
+			'onStateChange': onPlayerStateChange
+		  }
+		});
+	}
+	// autoplay video
+	function onPlayerReady(event) {
+		event.target.playVideo();
+		event.target.setPlaybackQuality('hd1080');
+	}
+	
+
+
+	// when video ends
+	function onPlayerStateChange(event) {        
+		if(event.data === 0) {          
+			$("#layer_pop").hide();
+			player.stopVideo();//플레이어 스탑
+			player.seekTo(0);
+			$("#tab1").attr("src",""); /*151216 IE8 소리 제어*/
+
+		}
+	}
+
+	$(document).ready(function(){
+		$('#layer_pop').show();
+
+	    //big3
+	    $('.big3 li a.tit').on('click', function() {
+	    	$(this).parent().addClass('on');
+	    	$(this).parent().siblings().removeClass('on');
+	    	return false;
+	    });
+
+	    //youtube
+
+
+	    $('.big3 .bunker iframe').attr('src', '');
+	    $('#tab2 iframe').attr('src', '');
+
+	    var $tabs = $('#tabs div');
+	    $tabs.hide();
+	    var index = Math.floor($tabs.length * Math.random());
+	    $tabs.eq(0).show();
+
+
+
+	    $('#tabs ul li').eq(index).addClass('active');
+	    $('#tabs ul li a').click(function() { //When any link is clicked
+		   
+	        $('#tabs ul li').removeClass('active'); // Remove active class from all links
+	        $(this).parent().addClass('active'); //Set clicked link class to active
+	        var index = $(this).parent().index(0);      
+
+
+
+	        //$('#tab1').find('iframe').attr('src', urls[index]);
+			// create youtube player
+			if(index==0){
+				var chgSrc = "HN3K3grJvqY";
+			}else{
+				var chgSrc = "N6LyElmfqcs";				
+			}
+
+	        $(currentTab).show(); // Show div with id equal to variable currentTab
+			player.loadVideoById(chgSrc, 5, "hd1080")
+	        return false;
+	    });
+
+	    $('#layer_pop .bg, #layer_pop .btn_close').on('click', function() {
+	        $('#layer_pop #tabs div').find('iframe').attr('src', '');
+	        $('#layer_pop').hide();
+			player.stopVideo();
+			player.seekTo(0);
+			$("#tab1").attr("src",""); /*151216 IE8 소리 제어*/
+	        $('.big3 .bunker iframe').attr('src', 'http://www.youtube.com/embed/dPH3euAXaps?wmode=opaque&autoplay=1&amp;vq=hd720');  //151210_2 hd 추가
+	        return false;
+			player.mute(true); //151216 edit
+	    });
+
+
+	    $('.banner .btn2').on('click', function(){
+	    	$('#layer_pop').show();
+	    	$('.big3 .bunker iframe').attr('src', '');
+	    	$('#tab1 iframe').attr('src', 'http://www.youtube.com/embed/1oW298iy0Tk?autoplay=1&amp;vq=hd720');  //151210_2 hd 추가
+	    });
+
+
+
+
+
+
+	    /* //151210 add */
+
+	    /*
+	    //151209_2 주석
+	    $('#layer_pop .bg').on('click', function() {
+	    	$(this).parent().hide();
+	    })
+		*/ 
+				$( ".event_btn02" ).click(function() {				
+						  $('#layer_pop').show();								
+							//$('.tab_menu1 iframe').attr('src', 'http://www.youtube.com/embed/1oW298iy0Tk?autoplay=1&amp;vq=hd720'); 
+								player.playVideo();
+										//$tabs.eq(2).show();
+										 $('#tabs ul li').eq(0).addClass('active');
+										$('#tabs ul li').eq(1).removeClass('active'); // Remove active class from all links
+										$('#tabs ul li').eq(2).removeClass(''); // Remove active class from all links										
+										var index = $(this).parent().index();										
+										//$('#tab1').find('iframe').attr('src', urls[index]);
+										// create youtube playe
+										if(index==0){
+												var chgSrc = "HN3K3grJvqY";
+											}else{
+												var chgSrc = "N6LyElmfqcs";
+												
+											}
+										$(currentTab).show(); // Show div with id equal to variable currentTab
+										player.loadVideoById(chgSrc, 5, "hd1080")
+										return false;
+								 
+							 //$('.tab_menu1 ').find('iframe').attr('src', urls[index]);
+				});
+
+				
+				$(".tab_menu3 a").click(function(e){
+					e.preventDefault();
+					$(location).attr('href','index_naver.html');
+				  });
+
+
+				$( ".tab_menu3 a" ).click(function() {	
+					alert('coming soon!');
+					//$('#tabs ul li').eq(2).removeClass('active'); // Remove active class from all links
+				});
+				$( ".event_btn04" ).click(function() {	
+					alert('coming soon!');
+					//$('#tabs ul li').eq(2).removeClass('active'); // Remove active class from all links
+				});
+
+				$( ".event_btn05" ).click(function() {	
+					alert('coming soon!');
+					//$('#tabs ul li').eq(2).removeClass('active'); // Remove active class from all links
+				});
+
+	});
+
+	</script>
+</head>
+<body>
+<div id="wrap">
+	<!-- content -->
+	<div id="content">
+		<div class="wrap">
+			<h1><a href="http://sa.nexon.game.naver.com/main/index.aspx " target="_blank"><img src="images/logo.png" alt="sudden attack" /></a></h1> <!-- 151209 새창 추가 -->
+			<!-- 151214 버튼 링크 -->
+			<a class="event_btn01" href="http://event.sa.nexon.game.naver.com/events/2015/1126_event/event.aspx" target="_blank" title="자세히보기"></a>
+			<a class="event_btn02" href="#"  title="홍보영상보기"></a>
+			<a class="event_btn03" href="http://event.sa.nexon.game.naver.com/events/2015/1126_shoot/event.aspx#eventCont03" target="_blank" title="클릭 쏴전 등록 1차 보상받기"></a>
+		    <a class="event_btn04" href="#" target="" title="2탄 미리 보기"></a>
+		    <a class="event_btn05" href="#" target="" title="티져 영상 보기"></a>
+		</div>
+	</div>
+	<!-- //content -->
+	<!-- footer -->
+	<div id="footer">
+		<div class="wrap">
+			<div class="sns">
+				<a href="#" class="facebook"><img src="images/sns1.gif" alt="facebook" /></a>
+				<a href="#" class="twitter"><img src="images/sns2.gif" alt="twitter" /></a>
+			</div>
+			<div class="btn_area">
+				<a href="http://sa.nexon.game.naver.com/main/index.aspx " class="btn1" target="_blank"><img src="images/btn2.gif" alt="홈페이지 바로가기" /></a> <!-- 151209 새창 추가 -->
+				<a href="https://www.facebook.com/SuddenAttack.Korea  " class="btn2" target="_blank"><img src="images/btn3.gif" alt="공식 페이스북 바로가기" /></a> <!-- 151209 새창 추가 -->
+				<a href="https://www.youtube.com/user/SuddenAttackmkt " class="btn3" target="_blank"><img src="images/btn4.gif" alt="서든 유튜브 바로가기" /></a> <!-- 151209 새창 추가 -->
+			</div>
+			<div class="not_today">
+				<input type="checkbox" name="notToday" id="notToday" />
+				<label for="notToday"><img src="images/txt1.gif" alt="오늘 하루 보지않기" /></label>
+			</div>
+			<p class="copyright"><img src="images/copyright.gif" alt="Copyright ⓒ 2015 NEXON Korea Corp. Nexon GT Co., Ltd. All Rights Reserved." /></p>
+		</div>
+	</div>
+	<!-- //footer -->
+
+	<div class="floating_event">
+		<a href="http://event.sa.nexon.game.naver.com/events/2015/1126_shoot/event.aspx#eventCont01" class="btn1" target="_blank"><img src="images/btn2_1.png" alt="다작 업데이트" /></a> <!-- 151209 새창 추가 -->
+		<a href="http://event.sa.nexon.game.naver.com/events/2015/1126_shoot/event.aspx#eventCont04" class="btn3" target="_blank"><img src="images/btn2_3.png" alt="12월 통합 이벤트 자세히보기" /></a> <!-- 151209 새창 추가 -->
+	</div>
+</div>
+<!-- 151214 layer popup -->
+<div id="layer_pop" class="pop">
+	<div class="bg"></div> <!-- 151210 onclick bg 삭제 -->
+	<div class="popup_box">
+		<div id="tabs">
+            <ul>
+                <li class="tab_menu1"><a id="0" href="#tab1"><span class="blind"></span></a></li>
+                <li class="tab_menu2"><a id="1" href="#tab2"><span class="blind"></span></a></li>
+				<li class="tab_menu3"><a id="2" href="#tab2"><span class="blind"></span></a></li>
+				
+            </ul>
+			<!--span class="tab_menu3"><a id="" href="#"><span class="blind"></span></a></span-->
+        </div>
+        <div id="tab1">
+           <!-- iframe width="" height="" src="" frameborder="0" allowfullscreen></iframe--> <!--//151210_2 hd 추가 -->
+        </div>
+        <a href="#" class="btn_close"><span class="blind">닫기</span></a>
+
+		<!-- 151210 삭제 -->
+		<!-- 
+		<a href="javascript:closeMovie_Layer()" class="btn_close"><span class="blind">닫기</span></a>
+		<p id="areayoutube"></p> -->
+		<!-- //151210 삭제 -->
+	</div>
+</div>
+<!-- //layer popup -->
+
+<!-- <script type="text/javascript">
+loadYoutube(0);
+</script> --> <!-- 151210 삭제 -->
+</body>
+</html>

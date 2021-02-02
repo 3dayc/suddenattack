@@ -1,0 +1,48 @@
+@charset "utf-8";
+
+/* Reset */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,form,fieldset,p,button{margin:0;padding:0}
+body,h1,h2,h3,h4,input,button{font-family:Dotum,돋움,Helvetica,AppleSDGothicNeo,sans-serif;font-size:12px;color:#383d41}
+img,fieldset,iframe{border:0 none}
+img{width:100%;height:auto;vertical-align:top;}
+.blind{width:0px; height:0px;position:absolute; overflow:hidden; font-size:0px; line-height:0px; z-index:-1;visibility:hidden;}
+
+/* common 151215 add  */
+header{position:relative; }
+header h1{position:absolute; top:3.472%; left:3.958%; width:15.833%;}
+header h1 a{display:block; }
+
+header .btn1 {position:absolute; width:20%; top:43.5%; left:29%; z-index:9999; }
+header .btn2 {position:absolute; width:20%; top:43.5%; left:51%; z-index:9999;}
+header .btn3 {position:absolute; width:16%; top:81.5%; left:43%; z-index:9999;}
+section{position:relative; }
+section a{display:block;}
+section .btn4 {position:absolute; width:18%; top:62%; left:32%; z-index:9999;}
+section .btn5 {position:absolute; width:18%; top:62%; left:52%; z-index:9999;}
+
+
+/*.section1 .btn,
+.section2 .btn,
+.section3 .btn{position:absolute; right:10.208%; width:15.625%;}
+.section1 .btn{top:31.053%;}
+.section1 #play-video{position:absolute; top:39.261%; width:100%; padding:0 13.541%; box-sizing:border-box; -webkit-box-sizing:border-box;}
+.section2 .btn{top:48.291%;}
+.section3 .btn{top:31.739%;}
+.section3 .btn2{position:absolute; left:29.583%; top:76.376%; width:42.291%;}
+.section4 .cash{position:absolute; left:45.833%; top:36.039%; width:16%;}
+.section4 .cash:after{content:''; display:block; clear:both; height:0; visibility:hidden;}
+.section4 .cash span{float:left; display:block; width:19.291%;}
+.section4 .day span{display:block; position:absolute; left:54.166%; top:61.980%; width:30.9375%;}
+.section4 .btn{display:block; position:absolute; left:74.375%; top:34.063%; width:19.375%;}
+.section4 .btn2{display:block; position:absolute; right:5.729%; top:62.970%; width:13.854%;}/* 151210 add */
+
+
+footer{position:relative;}
+footer .sns a{position:absolute; top:15.023%; width:4.375%;}
+footer .sns a.facebook{left:10.312%;}
+footer .sns a.twitter{left:15.625%;}
+footer .btn_area a{position:absolute; top:15.023%; width:20.520%;}
+footer .btn_area a.btn1{left:22.395%;}
+footer .btn_area a.btn2{left:45.520%;}
+footer .btn_area a.btn3{left:68.545%;}
+footer .not_today{position:absolute; left:84.166%; top:63.380%; width:13.333%;}
